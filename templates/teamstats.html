@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">{{teams.team_n}}</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">打撃成績</li>
+                        </ol>
+                        <nav class="nav">
+                            <a class="nav-link" href="{% url 'tab' teams.team_id%}">全球</a>
+                            <a class="nav-link" href="{% url 'tvsright' teams.team_id%}">対右</a>
+                            <a class="nav-link" href="{% url 'tvsleft' teams.team_id%}">対左</a>
+                            <a class="nav-link" href="{% url 'tchance' teams.team_id%}">得点圏</a>
+                            <a class="nav-link" href="{% url 'tbase' teams.team_id%}">塁別</a>
+                            <a class="nav-link" href="{% url 'tinning' teams.team_id%}">イニング別</a>
+                            <a class="nav-link" href="{% url 'tcount' teams.team_id%}">カウント別</a>
+                            <a class="nav-link" href="{% url 'tcourse' teams.team_id%}">コース別</a>
+                            <a class="nav-link" href="{% url 'tpoint' teams.team_id%}">点差別</a>
+                            <a class="nav-link" href="{% url 'tweek' teams.team_id%}">曜日別</a>
+                            <a class="nav-link" href="{% url 'tmonth' teams.team_id%}">月別</a>
+                            <a class="nav-link" href="{% url 'tbatnum' teams.team_id%}">打順別</a>
+                            <a class="nav-link" href="{% url 'tstadium' teams.team_id%}">球場別</a>
+                            <a class="nav-link" href="{% url 'tvsteam' teams.team_id%}">対チーム別</a>
+                            <a class="nav-link" href="{% url 'tposi' teams.team_id%}">守備位置別</a>
+                          </nav>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                {{ sit }}成績
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>SituationType</th>
+                                            <th>投球割合</th>
+                                            <th>打席</th>
+                                            <th>打数</th>
+                                            <th>安打数</th>
+                                            <th>単打</th>
+                                            <th>二塁打</th>
+                                            <th>三塁打</th>
+                                            <th>本塁打</th>
+                                            <th>塁打数</th>
+                                            <th>打点</th>
+                                            <th>三振</th>
+                                            <th>四球</th>
+                                            <th>死球</th>
+                                            <th>犠打</th>
+                                            <th>犠飛</th>
+                                            <th>併殺打</th>
+                                            <th>打率</th>
+                                            <th>長打率</th>
+                                            <th>出塁率</th>
+                                            <th>OPS</th>
+                                            <th>Sw%</th>
+                                            <th>Co%</th>
+                                            <th>SSw%</th>
+                                            <th>SCo%</th>
+                                            <th>BSw%</th>
+                                            <th>BCo%</th>
+                                            <th>GO</th>
+                                            <th>FO</th>
+                                            <th>RO</th>
+                                            <th>投球数</th>
+                                            <th>PperPA</th>
+                                            <th>SituationType</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>SituationType</th>
+                                            <th>Per</th>
+                                            <th>打席</th>
+                                            <th>打数</th>
+                                            <th>安打数</th>
+                                            <th>単打</th>
+                                            <th>二塁打</th>
+                                            <th>三塁打</th>
+                                            <th>本塁打</th>
+                                            <th>塁打数</th>
+                                            <th>打点</th>
+                                            <th>三振</th>
+                                            <th>四球</th>
+                                            <th>死球</th>
+                                            <th>犠打</th>
+                                            <th>犠飛</th>
+                                            <th>併殺打</th>
+                                            <th>打率</th>
+                                            <th>長打率</th>
+                                            <th>出塁率</th>
+                                            <th>OPS</th>
+                                            <th>Sw%</th>
+                                            <th>Co%</th>
+                                            <th>SSw%</th>
+                                            <th>SCo%</th>
+                                            <th>BSw%</th>
+                                            <th>BCo%</th>
+                                            <th>GO</th>
+                                            <th>FO</th>
+                                            <th>RO</th>
+                                            <th>投球数</th>
+                                            <th>PperPA</th>
+                                            <th>SituationType</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+                                    {% for stat in teams.teamstats.all %}
+                                    {% if stat.sitnum == num %}
+                                        <tr>
+                                            <td>{{ stat.stype }}</td>
+                                            <td>{{ stat.per| default_if_none:"" }}</td>
+                                            <td>{{ stat.pa| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.ab| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.hit }}</td>
+                                            <td>{{ stat.single }}</td>
+                                            <td>{{ stat.double }}</td>
+                                            <td>{{ stat.triple }}</td>
+                                            <td>{{ stat.homerun }}</td>
+                                            <td>{{ stat.tb }}</td>
+                                            <td>{{ stat.rbi| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.k| default_if_none:"" }}</td>
+                                            <td>{{ stat.bb| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.db| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.sb| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.sf| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.dp| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.avg| default_if_none:"0.0" }}</td>
+                                            <td>{{ stat.slg| default_if_none:"" }}</td>
+                                            <td>{{ stat.obp| default_if_none:"" }}</td>
+                                            <td>{{ stat.ops| default_if_none:"" }}</td>
+                                            <td>{{ stat.sw| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.co| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.ssw| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.sco| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.bsw| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.bco| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.go| default_if_none:"" }}</td>
+                                            <td>{{ stat.fo| default_if_none:"" }}</td>
+                                            <td>{{ stat.ro| default_if_none:"" }}</td>
+                                            <td>{{ stat.pitcount| default_if_none:"" }}</td>
+                                            <td>{{ stat.pperpa| default_if_none:"" }}</td>
+                                            <td>{{ stat.stype }}</td>
+                                        </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+{% endblock content %}

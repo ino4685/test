@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">{{ teams.team_n }}</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">チーム紹介</li>
+        </ol>
+        <p>チーム成績</p>
+        <nav class="nav">
+            <a class="nav-link" href="{% url 'tab' pri %}">打者成績</a>
+            <a class="nav-link" href="{% url 'tp2021' pri %}">投手成績</a>
+        </nav>
+        <p class="pt-5">個人成績</p>
+        <nav class="nav">
+            <a class="nav-link" href="{% url 'tpb2021' pri %}">打者成績</a>
+            <a class="nav-link" href="{% url 'tpp2021' pri %}">投手成績</a>
+        </nav>
+    </div>
+</main>
+{% endblock content %}

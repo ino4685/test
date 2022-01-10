@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">チーム</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">チーム</li>
+        </ol>
+            <p>セリーグ</p>
+            {% for item in object_list %}
+            {% if item.leagueid == 1 %}
+            <p><a href="{% url 'ti2021' item.pk %}">{{item.team_n}}</a></p>
+            {% endif %}
+            {% endfor %}
+
+            <p>パリーグ</p>
+            {% for item in object_list %}
+            {% if item.leagueid == 2 %}
+            <p><a href="{% url 'ti2021' item.pk %}">{{item.team_n}}</a></p>
+            {% endif %}
+            {% endfor %}
+    </div>
+</main>
+{% endblock content %}
