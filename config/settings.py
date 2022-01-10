@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fvj75vbky52cvi*i7=9mk9+rv*wqq14tk7w+tgmhz)y$vwwa(n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["it-baseball.site"]
 
 
 # Application definition
@@ -85,8 +85,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'baseball',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'PORT': '8889',
+        'HOST': 'localhost',
+        'PASSWORD': '@FF10ffino',
+        'PORT': '3306',
+        
     }
 }
 
