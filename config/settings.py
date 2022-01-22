@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-fvj75vbky52cvi*i7=9mk9+rv*wqq14tk7w+tgmhz)y$vwwa(n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["it-baseball.site"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'config.context_processors.google_analytics',
             ],
         },
     },
@@ -86,8 +87,8 @@ DATABASES = {
         'NAME': 'baseball',
         'USER': 'root',
         'HOST': 'localhost',
-        'PASSWORD': '@FF10ffino',
-        'PORT': '3306',
+        'PASSWORD': 'root',
+        'PORT': '8889',
         
     }
 }
@@ -129,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/sta/'
+STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
@@ -137,9 +138,11 @@ STATICFILES_DIRS = [str(BASE_DIR / 'static')]
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
-MEDIA_URL = 'medi/'
+MEDIA_URL = 'media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+GOOGLE_ANALYTICS_TRACKING_ID = 'UA-196108238-2'
