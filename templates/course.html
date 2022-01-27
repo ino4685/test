@@ -1,145 +1,83 @@
-<style>
-  .hpb-cnt-tb3 {
-    background-color: #333333;
-    border: 0px solid #cccccc;
-    width: 100%;
-    height: 100%;
-    max-width: 480px;
-    max-height: 480px;
-  }
-  
-  .hpb-cnt-tb-cell5 {
-    background-color: #eeeeee;
-    color: #333333;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 0px;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-top-color: #ffffff;
-    border-right-color: #ffffff;
-    border-bottom-color: #ffffff;
-    border-left-color: #ffffff;
-    width: 96px;
-    height: 96px;
-    text-align: center;
-  }
-  
-  .hpb-cnt-tb-cell6 {
-    background-color: #cccccc;
-    color: #333333;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 1px;
-    border-left-width: 0px;
-    border-top-style: solid;
-    border-right-style: solid;
-    border-bottom-style: solid;
-    border-left-style: solid;
-    border-top-color: #ffffff;
-    border-right-color: #ffffff;
-    border-bottom-color: #ffffff;
-    border-left-color: #ffffff;
-    max-width: 96px;
-    max-height: 96px;
-    text-align: center;
-  }</style>
-
-<link href="static/styles.css" rel="stylesheet">
-
 <table border="0" class="hpb-cnt-tb3" cellspacing="1"> 
 <tbody> 
-  <!-- <tr> 
-    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }-{{ stat.hit }}<br>
-    <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000" }}</span><br>
-    {{ stat.homerun }}本<br>
-    {{ stat.k| default_if_none:"0" }}三振
-    Sw%{{ stat.sw| default_if_none:"0.0" }}%
-    Co%{{ stat.co| default_if_none:"0.0" }}%
-    </td>  -->
   <tr>
-    <td class="hpb-cnt-tb-cell5">10-3<br> 
-  <span style="font-size:14px;font-weight:bold;">    .300</span><br> 
-    1本<br />1三振</td> 
-    <td class="hpb-cnt-tb-cell5">10-3<br> 
-      <span style="font-size:14px;font-weight:bold;">    .300</span><br> 
-        1本<br />1三振</td> 
-        <td class="hpb-cnt-tb-cell5">10-3<br> 
-          <span style="font-size:14px;font-weight:bold;">    .300</span><br> 
-            1本<br />1三振</td> 
-    <td class="hpb-cnt-tb-cell5">2-0<br> 
-  <span style="font-size:14px;font-weight:bold;">    .000</span><br> 
-    0本<br />1三振</td> 
-    <td class="hpb-cnt-tb-cell5"><br />---<br /><br /></td> 
+    {% for stat in leagues.league.all %}
+    {% if stat.sitnum == num %}
+    {% if stat.stype == '1' or stat.stype == '2' or stat.stype == '3' or stat.stype == '4' or stat.stype == '5' %}
+    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+      <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
+      {{ stat.homerun }}本<br>
+      {{ stat.k| default_if_none:"0" }}三振<br>
+      Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+      Co% {{ stat.co| default_if_none:"0.0" }}%
+    </td>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
   </tr> 
 
   <tr> 
-    <td class="hpb-cnt-tb-cell5">2-0<br> 
- <span style="font-size:14px;font-weight:bold;">     .000</span><br> 
-    0本<br />0三振</td> 
-    <td class="hpb-cnt-tb-cell6">26-10<br> 
- <span style="font-size:14px;font-weight:bold;">     .385</span><br> 
-    2本<br />2三振</td> 
-    <td class="hpb-cnt-tb-cell6">33-15<br> 
-<span style="font-size:14px;font-weight:bold;">       .455</span><br> 
-    5本<br />3三振</td> 
-    <td class="hpb-cnt-tb-cell6">29-9<br> 
-<span style="font-size:14px;font-weight:bold;">      .310</span><br> 
-    3本<br />8三振</td> 
-    <td class="hpb-cnt-tb-cell5">2-0<br> 
-<span style="font-size:14px;font-weight:bold;">       .000</span><br> 
-    0本<br />0三振</td> 
+    {% for stat in leagues.league.all %}
+    {% if stat.sitnum == num %}
+    {% if stat.stype == '6' or stat.stype == '7' or stat.stype == '8' or stat.stype == '9' or stat.stype == '10' %}
+    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+      <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
+      {{ stat.homerun }}本<br>
+      {{ stat.k| default_if_none:"0" }}三振<br>
+      Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+      Co% {{ stat.co| default_if_none:"0.0" }}%
+    </td>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
   </tr> 
 
   <tr> 
-    <td class="hpb-cnt-tb-cell5">3-0<br> 
-<span style="font-size:14px;font-weight:bold;">      .000</span><br> 
-    0本<br />1三振</td> 
-    <td class="hpb-cnt-tb-cell6">67-25<br> 
-<span style="font-size:14px;font-weight:bold;">       .373</span><br> 
-    4本<br />7三振</td> 
-    <td class="hpb-cnt-tb-cell6">60-23<br> 
-<span style="font-size:14px;font-weight:bold;">      .383</span><br> 
-    8本<br />4三振</td> 
-    <td class="hpb-cnt-tb-cell6">26-10<br> 
-<span style="font-size:14px;font-weight:bold;">       .385</span><br> 
-    3本<br />5三振</td> 
-    <td class="hpb-cnt-tb-cell5"><br />---<br /><br /></td> 
+    {% for stat in leagues.league.all %}
+    {% if stat.sitnum == num %}
+    {% if stat.stype == '11' or stat.stype == '12' or stat.stype == '13' or stat.stype == '14' or stat.stype == '15' %}
+    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+      <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
+      {{ stat.homerun }}本<br>
+      {{ stat.k| default_if_none:"0" }}三振<br>
+      Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+      Co% {{ stat.co| default_if_none:"0.0" }}%
+    </td>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
   </tr> 
 
   <tr> 
-    <td class="hpb-cnt-tb-cell5">5-1<br> 
-<span style="font-size:14px;font-weight:bold;">      .200</span><br> 
-    0本<br />4三振</td> 
-    <td class="hpb-cnt-tb-cell6">49-14<br> 
-<span style="font-size:14px;font-weight:bold;">        .286</span><br> 
-    1本<br />10三振</td> 
-    <td class="hpb-cnt-tb-cell6">40-12<br> 
-<span style="font-size:14px;font-weight:bold;">       .300</span><br> 
-    6本<br />5三振</td> 
-    <td class="hpb-cnt-tb-cell6">18-6<br> 
-<span style="font-size:14px;font-weight:bold;">       .333</span><br> 
-    2本<br />1三振</td> 
-    <td class="hpb-cnt-tb-cell5"><br />---<br /><br /></td> 
+    {% for stat in leagues.league.all %}
+    {% if stat.sitnum == num %}
+    {% if stat.stype == '16' or stat.stype == '17' or stat.stype == '18' or stat.stype == '19' or stat.stype == '20' %}
+    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+      <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
+      {{ stat.homerun }}本<br>
+      {{ stat.k| default_if_none:"0" }}三振<br>
+      Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+      Co% {{ stat.co| default_if_none:"0.0" }}%
+    </td>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
   </tr> 
 
   <tr> 
-    <td class="hpb-cnt-tb-cell5">6-0<br> 
-<span style="font-size:14px;font-weight:bold;">       .000</span><br> 
-    0本<br />5三振</td> 
-    <td class="hpb-cnt-tb-cell5">17-2<br> 
-<span style="font-size:14px;font-weight:bold;">       .118</span><br> 
-    0本<br />12三振</td> 
-    <td class="hpb-cnt-tb-cell5">11-1<br> 
-<span style="font-size:14px;font-weight:bold;">       .091</span><br> 
-    0本<br />8三振</td> 
-    <td class="hpb-cnt-tb-cell5">5-1<br> 
-<span style="font-size:14px;font-weight:bold;">       .200</span><br> 
-    0本<br />3三振</td> 
-    <td class="hpb-cnt-tb-cell5"><br />---<br /><br /></td> 
+    {% for stat in leagues.league.all %}
+    {% if stat.sitnum == num %}
+    {% if stat.stype == '21' or stat.stype == '22' or stat.stype == '23' or stat.stype == '24' or stat.stype == '25' %}
+    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+      <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
+      {{ stat.homerun }}本<br>
+      {{ stat.k| default_if_none:"0" }}三振<br>
+      Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+      Co% {{ stat.co| default_if_none:"0.0" }}%
+    </td>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
   </tr> 
 </tbody> 
 </table> 
