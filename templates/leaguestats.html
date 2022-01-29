@@ -155,6 +155,26 @@
                         </div>
                         {% if num == 6 %}
                         {% include 'league-course.html'%}
+                        <table border="0" class="course-sample" cellspacing="1"> 
+                            <br>
+                            見本
+                            <tbody> 
+                              <tr>
+                                <td class="course-t bg-info">打率.150未満
+                                </td>
+                                <td class="course-t">コース番号<br>
+                                  打数-安打<br>
+                                  <span class="avg">打率</span><br>
+                                  本塁打数<br>
+                                  三振数<br>
+                                  Sw%<br>
+                                  Co%
+                                </td>
+                                <td class="course-t bg-danger">打率.300以上
+                                </td>
+                              </tr> 
+                            </tbody> 
+                            </table> 
                         {% endif %}
                     </div>
                 </main>
