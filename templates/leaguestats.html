@@ -4,7 +4,6 @@
 
 
 {% block content %}
-<div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">{{leagues.leaguename}}</h1>
@@ -110,7 +109,7 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-
+                                        
                                     {% for stat in leagues.league.all %}
                                     {% if stat.sitnum == num %}
                                         <tr>

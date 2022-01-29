@@ -7,7 +7,7 @@ class La2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -24,7 +24,7 @@ class Lavr2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')  
         return qs
 
     def get_context_data(self, **kwargs):
@@ -39,7 +39,7 @@ class Lavl2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league') 
         return qs
 
 
@@ -55,7 +55,7 @@ class Lac2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')  
         return qs
 
 
@@ -71,7 +71,7 @@ class Las2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')  
         return qs
 
 
@@ -87,7 +87,7 @@ class Lavt2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')  
         return qs
 
     def get_context_data(self, **kwargs):
@@ -102,7 +102,7 @@ class Lai2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league') 
         return qs
 
     def get_context_data(self, **kwargs):
@@ -117,7 +117,7 @@ class Lacount2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -132,7 +132,7 @@ class Lacourse2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -147,7 +147,7 @@ class Labn2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -162,7 +162,7 @@ class Lap2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -177,7 +177,7 @@ class Law2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -192,7 +192,7 @@ class Labase2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -207,7 +207,7 @@ class Lam2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):
@@ -222,7 +222,7 @@ class Laposi2021View(DetailView):
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('league')  # team -> playerの逆参照なので、related_nameを使用
+        qs = self.model.objects.prefetch_related('league')
         return qs
 
     def get_context_data(self, **kwargs):

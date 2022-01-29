@@ -4,7 +4,6 @@
 
 
 {% block content %}
-<div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">{{teams.team_n}}</h1>
@@ -131,10 +130,10 @@
                                             <td>{{ stat.sb| default_if_none:""| floatformat:0 }}</td>
                                             <td>{{ stat.sf| default_if_none:""| floatformat:0 }}</td>
                                             <td>{{ stat.dp| default_if_none:""| floatformat:0 }}</td>
-                                            <td>{{ stat.avg| default_if_none:"0.0" }}</td>
-                                            <td>{{ stat.slg| default_if_none:"" }}</td>
-                                            <td>{{ stat.obp| default_if_none:"" }}</td>
-                                            <td>{{ stat.ops| default_if_none:"" }}</td>
+                                            <td>{{ stat.avg| default_if_none:"0.0"| floatformat:3 }}</td>
+                                            <td>{{ stat.slg| default_if_none:""| floatformat:3 }}</td>
+                                            <td>{{ stat.obp| default_if_none:""| floatformat:3 }}</td>
+                                            <td>{{ stat.ops| default_if_none:""| floatformat:3 }}</td>
                                             <td>{{ stat.sw| default_if_none:"0.0" }}%</td>
                                             <td>{{ stat.co| default_if_none:"0.0" }}%</td>
                                             <td>{{ stat.ssw| default_if_none:"0.0" }}%</td>
@@ -154,6 +153,9 @@
                                 </table>
                             </div>
                         </div>
+                        {% if num == 6 %}
+                        {% include 'course.html'%}
+                        {% endif %}
                     </div>
                 </main>
 {% endblock content %}

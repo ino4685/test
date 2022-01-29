@@ -1,10 +1,11 @@
-<table border="0" class="hpb-cnt-tb3" cellspacing="1"> 
+<table border="0" class="course" cellspacing="1"> 
 <tbody> 
   <tr>
     {% for stat in leagues.league.all %}
     {% if stat.sitnum == num %}
     {% if stat.stype == '1' or stat.stype == '2' or stat.stype == '3' or stat.stype == '4' or stat.stype == '5' %}
-    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+    <td class="course-t {% if stat.avg >= 0.3 %}bg-danger{% elif stat.avg < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+      {{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
       <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
       {{ stat.homerun }}本<br>
       {{ stat.k| default_if_none:"0" }}三振<br>
@@ -20,7 +21,8 @@
     {% for stat in leagues.league.all %}
     {% if stat.sitnum == num %}
     {% if stat.stype == '6' or stat.stype == '7' or stat.stype == '8' or stat.stype == '9' or stat.stype == '10' %}
-    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+    <td class="course-t {% if stat.avg >= 0.3 %}bg-danger{% elif stat.avg < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+      {{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
       <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
       {{ stat.homerun }}本<br>
       {{ stat.k| default_if_none:"0" }}三振<br>
@@ -36,7 +38,8 @@
     {% for stat in leagues.league.all %}
     {% if stat.sitnum == num %}
     {% if stat.stype == '11' or stat.stype == '12' or stat.stype == '13' or stat.stype == '14' or stat.stype == '15' %}
-    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+    <td class="course-t {% if stat.avg >= 0.3 %}bg-danger{% elif stat.avg < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+      {{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
       <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
       {{ stat.homerun }}本<br>
       {{ stat.k| default_if_none:"0" }}三振<br>
@@ -52,7 +55,8 @@
     {% for stat in leagues.league.all %}
     {% if stat.sitnum == num %}
     {% if stat.stype == '16' or stat.stype == '17' or stat.stype == '18' or stat.stype == '19' or stat.stype == '20' %}
-    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+    <td class="course-t {% if stat.avg >= 0.3 %}bg-danger{% elif stat.avg < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+      {{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
       <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
       {{ stat.homerun }}本<br>
       {{ stat.k| default_if_none:"0" }}三振<br>
@@ -68,7 +72,8 @@
     {% for stat in leagues.league.all %}
     {% if stat.sitnum == num %}
     {% if stat.stype == '21' or stat.stype == '22' or stat.stype == '23' or stat.stype == '24' or stat.stype == '25' %}
-    <td class="hpb-cnt-tb-cell5">{{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+    <td class="course-t {% if stat.avg >= 0.3 %}bg-danger{% elif stat.avg < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+      {{ stat.ab| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
       <span style="font-size:14px;font-weight:bold;">{{ stat.avg| default_if_none:"0.000"| floatformat:3 }}</span><br>
       {{ stat.homerun }}本<br>
       {{ stat.k| default_if_none:"0" }}三振<br>
