@@ -13,3 +13,6 @@ class ContactView(TemplateView):
 class NeologismView(TemplateView):
     template_name = "neologism.html"
 
+class PrivacypolicyView(TemplateView):
+    template_name = "privacypolicy.html"
+
