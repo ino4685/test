@@ -146,3 +146,10 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 GOOGLE_ANALYTICS_TRACKING_ID = 'UA-196108238-2'
+
+# メールサーバー用
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'inoue04685@gmail.com'
+EMAIL_HOST_PASSWORD = 'nlfvhkthkkcdtvgh'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
