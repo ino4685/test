@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import TopView, FirstView, ContactView, ContactsendView, NeologismView, PrivacypolicyView
+from .views import TopView, FirstView, ContactView, ContactsendView, NeologismView, SiteView, PrivacypolicyView
 
 urlpatterns = [
     path('', TopView.as_view(), name='top'),
@@ -7,5 +7,6 @@ urlpatterns = [
     path('contact/', ContactView.as_view(), name='contact'),
     path('contact-send/', ContactsendView.as_view(), name='contact-send'),
     path('neologism/', NeologismView.as_view(), name='neologism'),
+    path('site/', SiteView.as_view(), name='site'),
     path('privacypolicy/', PrivacypolicyView.as_view(), name='privacypolicy'),
 ]

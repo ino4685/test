@@ -23,6 +23,9 @@ class ContactsendView(TemplateView):
 
 class NeologismView(TemplateView):
     template_name = "neologism.html"
+    
+class SiteView(TemplateView):
+    template_name = "site.html"
 
 class PrivacypolicyView(TemplateView):
     template_name = "privacypolicy.html"
