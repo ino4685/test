@@ -26,6 +26,9 @@ class NeologismView(TemplateView):
     
 class SiteView(TemplateView):
     template_name = "site.html"
+    
+class SearchView(TemplateView):
+    template_name = "search.html"
 
 class PrivacypolicyView(TemplateView):
     template_name = "privacypolicy.html"
