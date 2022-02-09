@@ -4,13 +4,13 @@ from django.urls import reverse_lazy
 
 
 class TopView(TemplateView):
-    template_name = "top.html"
+    template_name = "fixed/top.html"
 
 class FirstView(TemplateView):
-    template_name = "first.html"
+    template_name = "fixed/first.html"
 
 class ContactView(FormView):
-    template_name = "contact.html"
+    template_name = "fixed/contact.html"
     form_class = ContactForm
     success_url = reverse_lazy('contact-send')
 
@@ -19,17 +19,17 @@ class ContactView(FormView):
         return super().form_valid(form)
 
 class ContactsendView(TemplateView):
-    template_name = "contactsend.html"
+    template_name = "fixed/contactsend.html"
 
 class NeologismView(TemplateView):
-    template_name = "neologism.html"
+    template_name = "fixed/neologism.html"
     
 class SiteView(TemplateView):
-    template_name = "site.html"
+    template_name = "fixed/site.html"
     
 class SearchView(TemplateView):
-    template_name = "search.html"
+    template_name = "fixed/search.html"
 
 class PrivacypolicyView(TemplateView):
-    template_name = "privacypolicy.html"
+    template_name = "fixed/privacypolicy.html"
 

@@ -2,7 +2,7 @@ from django.views.generic import ListView, DetailView
 from .models import Player, Stats2021
 
 class Pab2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -19,7 +19,7 @@ class Pab2021View(DetailView):
 
 
 class Pvr2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -34,7 +34,7 @@ class Pvr2021View(DetailView):
         return context
 
 class Pvl2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -50,7 +50,7 @@ class Pvl2021View(DetailView):
         return context
 
 class Pc2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -66,7 +66,7 @@ class Pc2021View(DetailView):
         return context
 
 class Ps2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -82,7 +82,7 @@ class Ps2021View(DetailView):
         return context
 
 class Pvt2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -97,7 +97,7 @@ class Pvt2021View(DetailView):
         return context
 
 class Pi2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -112,7 +112,7 @@ class Pi2021View(DetailView):
         return context
 
 class Pcount2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -127,7 +127,7 @@ class Pcount2021View(DetailView):
         return context
 
 class Pcourse2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -142,7 +142,7 @@ class Pcourse2021View(DetailView):
         return context
 
 class Pbn2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -157,7 +157,7 @@ class Pbn2021View(DetailView):
         return context
 
 class Pp2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -172,7 +172,7 @@ class Pp2021View(DetailView):
         return context
 
 class Pw2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -187,7 +187,7 @@ class Pw2021View(DetailView):
         return context
 
 class Pbase2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
@@ -202,7 +202,7 @@ class Pbase2021View(DetailView):
         return context
 
 class Pm2021View(DetailView):
-    template_name = "playerstats.html"
+    template_name = "player/playerstats.html"
     model = Player
     context_object_name = 'players'
 
