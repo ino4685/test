@@ -32,6 +32,8 @@ class Player(models.Model):
 class Stats2021(models.Model):
     id = models.BigIntegerField(blank=True, primary_key=True)
     pid = models.ForeignKey(Player, to_field='playerid', related_name='stats', db_column='pID', on_delete=models.CASCADE)  # Field name made lowercase.
+    tid = models.BigIntegerField(db_column='tID', blank=True, null=True)
+    lid = models.BigIntegerField(db_column='lID', blank=True, null=True)
     name_main = models.TextField(db_column='Name_main', blank=True, null=True)  # Field name made lowercase.
     stype = models.TextField(db_column='Stype', blank=True, null=True)  # Field name made lowercase.
     per = models.FloatField(blank=True, null=True)

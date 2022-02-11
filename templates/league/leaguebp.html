@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">{% if pri == 1 %}セリーグ{% elif pri == 2 %}パリーグ{% else %}両リーグ{% endif %}</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active"></li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                選手名簿
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>選手名</th>
+                                            <th>打席</th>
+                                            <th>打数</th>
+                                            <th>安打数</th>
+                                            <th>単打</th>
+                                            <th>二塁打</th>
+                                            <th>三塁打</th>
+                                            <th>本塁打</th>
+                                            <th>塁打数</th>
+                                            <th>打点</th>
+                                            <th>三振</th>
+                                            <th>四球</th>
+                                            <th>死球</th>
+                                            <th>犠打</th>
+                                            <th>犠飛</th>
+                                            <th>併殺打</th>
+                                            <th>打率</th>
+                                            <th>長打率</th>
+                                            <th>出塁率</th>
+                                            <th>OPS</th>
+                                            <th>Sw%</th>
+                                            <th>Co%</th>
+                                            <th>SSw%</th>
+                                            <th>SCo%</th>
+                                            <th>BSw%</th>
+                                            <th>BCo%</th>
+                                            <th>GO</th>
+                                            <th>FO</th>
+                                            <th>RO</th>
+                                            <th>投球数</th>
+                                            <th>PperPA</th>
+                                            <th>選手名</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>選手名</th>
+                                            <th>打席</th>
+                                            <th>打数</th>
+                                            <th>安打数</th>
+                                            <th>単打</th>
+                                            <th>二塁打</th>
+                                            <th>三塁打</th>
+                                            <th>本塁打</th>
+                                            <th>塁打数</th>
+                                            <th>打点</th>
+                                            <th>三振</th>
+                                            <th>四球</th>
+                                            <th>死球</th>
+                                            <th>犠打</th>
+                                            <th>犠飛</th>
+                                            <th>併殺打</th>
+                                            <th>打率</th>
+                                            <th>長打率</th>
+                                            <th>出塁率</th>
+                                            <th>OPS</th>
+                                            <th>Sw%</th>
+                                            <th>Co%</th>
+                                            <th>SSw%</th>
+                                            <th>SCo%</th>
+                                            <th>BSw%</th>
+                                            <th>BCo%</th>
+                                            <th>GO</th>
+                                            <th>FO</th>
+                                            <th>RO</th>
+                                            <th>投球数</th>
+                                            <th>PperPA</th>
+                                            <th>選手名</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                    {% if pri == 3 %}
+                                      {% for stat in leagues %}
+                                          <tr>
+                                              <td>{{ stat.name_main }}</td>
+                                              <td>{{ stat.pa| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.ab| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.hit }}</td>
+                                              <td>{{ stat.single }}</td>
+                                              <td>{{ stat.double }}</td>
+                                              <td>{{ stat.triple }}</td>
+                                              <td>{{ stat.homerun }}</td>
+                                              <td>{{ stat.tb }}</td>
+                                              <td>{{ stat.rbi| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.k| default_if_none:"" }}</td>
+                                              <td>{{ stat.bb| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.db| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.sb| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.sf| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.dp| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.avg| default_if_none:"0.0"| floatformat:3 }}</td>
+                                              <td>{{ stat.slg| default_if_none:""| floatformat:3 }}</td>
+                                              <td>{{ stat.obp| default_if_none:""| floatformat:3 }}</td>
+                                              <td>{{ stat.ops| default_if_none:""| floatformat:3 }}</td>
+                                              <td>{{ stat.sw| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.co| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.ssw| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.sco| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.bsw| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.bco| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.go| default_if_none:"" }}</td>
+                                              <td>{{ stat.fo| default_if_none:"" }}</td>
+                                              <td>{{ stat.ro| default_if_none:"" }}</td>
+                                              <td>{{ stat.pitcount| default_if_none:"" }}</td>
+                                              <td>{{ stat.pperpa| default_if_none:"" }}</td>
+                                              <td>{{ stat.name_main }}</td>
+                                          </tr>
+                                      {% endfor %}
+                                    {% else %}
+                                      {% for stat in leagues %}
+                                        {% if stat.lid == pri %}
+                                            <tr>
+                                              <td>{{ stat.name_main }}</td>
+                                              <td>{{ stat.pa| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.ab| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.hit }}</td>
+                                              <td>{{ stat.single }}</td>
+                                              <td>{{ stat.double }}</td>
+                                              <td>{{ stat.triple }}</td>
+                                              <td>{{ stat.homerun }}</td>
+                                              <td>{{ stat.tb }}</td>
+                                              <td>{{ stat.rbi| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.k| default_if_none:"" }}</td>
+                                              <td>{{ stat.bb| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.db| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.sb| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.sf| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.dp| default_if_none:""| floatformat:0 }}</td>
+                                              <td>{{ stat.avg| default_if_none:"0.0"| floatformat:3 }}</td>
+                                              <td>{{ stat.slg| default_if_none:""| floatformat:3 }}</td>
+                                              <td>{{ stat.obp| default_if_none:""| floatformat:3 }}</td>
+                                              <td>{{ stat.ops| default_if_none:""| floatformat:3 }}</td>
+                                              <td>{{ stat.sw| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.co| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.ssw| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.sco| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.bsw| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.bco| default_if_none:"0.0" }}%</td>
+                                              <td>{{ stat.go| default_if_none:"" }}</td>
+                                              <td>{{ stat.fo| default_if_none:"" }}</td>
+                                              <td>{{ stat.ro| default_if_none:"" }}</td>
+                                              <td>{{ stat.pitcount| default_if_none:"" }}</td>
+                                              <td>{{ stat.pperpa| default_if_none:"" }}</td>
+                                              <td>{{ stat.name_main }}</td>
+                                            </tr>
+                                        {% endif %}
+                                      {% endfor %}
+                                    {% endif %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+{% endblock content %}

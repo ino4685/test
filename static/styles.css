@@ -11741,3 +11741,7 @@ body {
   font-size:18px;
   font-weight:bold;
 }
+
+tbody {
+  white-space: nowrap;
+}

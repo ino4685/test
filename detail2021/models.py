@@ -32,12 +32,14 @@ class Player(models.Model):
 
 class Stats2021(models.Model):
     index = models.BigIntegerField(blank=True, primary_key=True)
-    pid: ForeignKey = models.ForeignKey(Player, to_field='playerid', related_name='stats', db_column='pID', on_delete=models.CASCADE)  # Field name made lowercase.
-    name_main = models.TextField(db_column='Name_main', blank=True, null=True)  # Field name made lowercase.
-    stype = models.TextField(db_column='Stype', blank=True, null=True)  # Field name made lowercase.
+    pid: ForeignKey = models.ForeignKey(Player, to_field='playerid', related_name='stats', db_column='pID', on_delete=models.CASCADE)
+    tid = models.BigIntegerField(db_column='tID', blank=True, null=True)
+    lid = models.BigIntegerField(db_column='lID', blank=True, null=True)
+    name_main = models.TextField(db_column='Name_main', blank=True, null=True)
+    stype = models.TextField(db_column='Stype', blank=True, null=True)
     per = models.FloatField(blank=True, null=True)
-    pa = models.BigIntegerField(db_column='PA', blank=True, null=True)  # Field name made lowercase.
-    ab = models.BigIntegerField(db_column='AB', blank=True, null=True)  # Field name made lowercase.
+    pa = models.BigIntegerField(db_column='PA', blank=True, null=True)
+    ab = models.BigIntegerField(db_column='AB', blank=True, null=True)
     hit = models.BigIntegerField(blank=True, null=True)
     single = models.BigIntegerField(blank=True, null=True)
     double = models.BigIntegerField(blank=True, null=True)

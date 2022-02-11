@@ -1,5 +1,5 @@
 from django.views.generic import DetailView, ListView, TemplateView
-from .models import League, Leaguestats2021
+from .models import League, Leaguestats2021, Statsrank2021
 
 
 class league2021View(ListView):
@@ -19,14 +19,13 @@ class leagueIntro2021View(DetailView):
 
 
 
-class leaguePlayerBatt2021View(DetailView):
+class leaguePlayerBatt2021View(ListView):
     template_name = "league/leaguebp.html"
-    model = League
+    model = Statsrank2021
     context_object_name = 'leagues'
 
     def get_queryset(self):
-        qs = self.model.objects.prefetch_related('TeamPlayer')  # team -> playerの逆参照なので、related_nameを使用
-        return qs
+        return Statsrank2021.objects.filter(pa__gt=100).order_by('-avg')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)  # はじめに継承元のメソッドを呼び出す
