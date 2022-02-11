@@ -20,9 +20,9 @@ class leagueIntro2021View(DetailView):
 
 
 class leaguePlayerBatt2021View(DetailView):
-    template_name = "league/teambp.html"
+    template_name = "league/leaguebp.html"
     model = League
-    context_object_name = 'teams'
+    context_object_name = 'leagues'
 
     def get_queryset(self):
         qs = self.model.objects.prefetch_related('TeamPlayer')  # team -> playerの逆参照なので、related_nameを使用
