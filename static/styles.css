@@ -11745,3 +11745,7 @@ body {
 tbody {
   white-space: nowrap;
 }
+
+.notpoint {
+  list-style: none;
+}
