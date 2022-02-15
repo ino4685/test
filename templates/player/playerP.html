@@ -6,9 +6,9 @@
 {% block content %}
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">{{ teams.team_n }}</h1>
+                        <h1 class="mt-4">プレイヤー</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">投手名簿</li>
+                            <li class="breadcrumb-item active">全球団全選手</li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-header">
@@ -21,6 +21,7 @@
                                         <tr>
                                             <th>PlayerName</th>
                                             <th>Number</th>
+                                            <th>TeamName</th>
                                             <th>Pit_Batt</th>
                                             <th>Career</th>
                                         </tr>
@@ -29,12 +30,13 @@
                                         <tr>
                                             <th>PlayerName</th>
                                             <th>Number</th>
+                                            <th>Team</th>
                                             <th>Pit_Batt</th>
                                             <th>Career</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                    {% for item in teams.TeamPlayer.all %}
+                                    {% for item in object_list %}
                                     {% if item.posi == '投手' %}
                                         <tr>
                                             <td><a href="{% url 'ap' item.pk %}">{{item.name_main}}</a></td>

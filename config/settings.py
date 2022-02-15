@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'detail2021.apps.Detail2021Config',
     'teamdetail2021.apps.Teamdetail2021Config',
     'leaguedetail2021.apps.Leaguedetail2021Config',
+    'detail2021p.apps.Detail2021PConfig',
+    'teamdetail2021p.apps.Teamdetail2021PConfig',
+    'leaguedetail2021p.apps.Leaguedetail2021PConfig',
 ]
 
 MIDDLEWARE = [

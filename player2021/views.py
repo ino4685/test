@@ -13,10 +13,4 @@ class PlayerPl2021View(TemplateView):
     template_name = "player/playerstats.html"
     model = Player
 
-class PlayerBatt2021View(TemplateView):
-    template_name = "player/playerstats.html"
-    model = Player
 
-class PlayerPit2021View(TemplateView):
-    template_name = "player/playerstats.html"
-    model = Player

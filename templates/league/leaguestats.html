@@ -24,7 +24,6 @@
                             <a class="nav-link" href="{% url 'Lmonth' leagues.leagueid%}">月別</a>
                             <a class="nav-link" href="{% url 'Lbatnum' leagues.leagueid%}">打順別</a>
                             <a class="nav-link" href="{% url 'Lstadium' leagues.leagueid%}">球場別</a>
-                            <a class="nav-link" href="{% url 'Lvsteam' leagues.leagueid%}">対チーム別</a>
                             <a class="nav-link" href="{% url 'Lposi' leagues.leagueid%}">守備位置別</a>
                         </nav>
                         <div class="card mb-4">
@@ -155,27 +154,6 @@
                         </div>
                         {% if num == 6 %}
                         {% include 'league/league-course.html'%}
-                        <table border="0" class="course-sample" cellspacing="1"> 
-                            <br>
-                            見本
-                            <tbody> 
-                              <tr>
-                                <td class="course-t bg-info">打率.150未満
-                                </td>
-                                <td class="course-t">コース番号<br>
-                                  打数-安打<br>
-                                  <span class="avg">打率</span><br>
-                                  本塁打数<br>
-                                  三振数<br>
-                                  Sw%<br>
-                                  Co%
-                                </td>
-                                <td class="course-t bg-danger">打率.300以上
-                                </td>
-                              </tr> 
-                            </tbody> 
-                        </table> 
-                        <p>※投手側視点(1が左打者側､5が右打者側)､中心9マス(7,8,9,12,13,14,17,18,19)がストライクゾーン</p>
                         {% endif %}
                     </div>
                 </main>
