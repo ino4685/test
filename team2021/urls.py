@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import Team2021View, TeamIntro2021View, TeamPit2021View, TeamPlayerBatt2021View, TeamPlayerPit2021View
+from .views import Team2021View, TeamIntro2021View, TeamPlayerBatt2021View, TeamPlayerPit2021View
 
 
 

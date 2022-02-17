@@ -8,6 +8,6 @@ urlpatterns = [
     path('<int:pk>/batt/', include('leaguedetail2021.urls')),
     path('<int:pk>/pit/', include('leaguedetail2021p.urls')),
     path('<int:pk>/player/batt/', leaguePlayerBatt2021View.as_view(), name='Lpb2021'),
-    # path('<int:pk>/player/pit/', leaguePlayerPit2021View.as_view(), name='lpp2021'),
+    path('<int:pk>/player/pit/', leaguePlayerPit2021View.as_view(), name='Lpp2021'),
 
 ]

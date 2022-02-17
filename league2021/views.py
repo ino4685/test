@@ -1,5 +1,5 @@
 from django.views.generic import DetailView, ListView, TemplateView
-from .models import League, Leaguestats2021, Statsrank2021
+from .models import League, Leaguestats2021, Statsrank2021, Statsrank2021P
 
 
 class league2021View(ListView):
@@ -33,5 +33,16 @@ class leaguePlayerBatt2021View(ListView):
 
         return context
 
-class leaguePlayerPit2021View(TemplateView):
-    template_name = "league/pit.html"
+class leaguePlayerPit2021View(ListView):
+    template_name = "league/leaguepp.html"
+    model = Statsrank2021P
+    context_object_name = 'leagues'
+
+    def get_queryset(self):
+        return Statsrank2021P.objects.filter(bc__gt=100).order_by('era')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)  # はじめに継承元のメソッドを呼び出す
+        context["pri"] = self.kwargs['pk']
+
+        return context
