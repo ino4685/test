@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base22.html' %}
 {% load static %}
 
 
@@ -6,26 +6,27 @@
 {% block content %}
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">{{leagues.leaguename}}</h1>
+                        <h1 class="mt-4">{{teams.team_n}}</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">打撃成績</li>
                         </ol>
                         <nav class="nav">
-                            <a class="nav-link" href="{% url 'Lp' leagues.leagueid%}">全球</a>
-                            <a class="nav-link" href="{% url 'Lvsrightp' leagues.leagueid%}">対右</a>
-                            <a class="nav-link" href="{% url 'Lvsleftp' leagues.leagueid%}">対左</a>
-                            <a class="nav-link" href="{% url 'Lchancep' leagues.leagueid%}">得点圏</a>
-                            <a class="nav-link" href="{% url 'Lbasep' leagues.leagueid%}">塁別</a>
-                            <a class="nav-link" href="{% url 'Linningp' leagues.leagueid%}">イニング別</a>
-                            <a class="nav-link" href="{% url 'Lcountp' leagues.leagueid%}">カウント別</a>
-                            <a class="nav-link" href="{% url 'Lcoursep' leagues.leagueid%}">コース別</a>
-                            <a class="nav-link" href="{% url 'Lpointp' leagues.leagueid%}">点差別</a>
-                            <a class="nav-link" href="{% url 'Lweekp' leagues.leagueid%}">曜日別</a>
-                            <a class="nav-link" href="{% url 'Lmonthp' leagues.leagueid%}">月別</a>
-                            <a class="nav-link" href="{% url 'Lbatnump' leagues.leagueid%}">打順別</a>
-                            <a class="nav-link" href="{% url 'Lstadiump' leagues.leagueid%}">球場別</a>
-                            <a class="nav-link" href="{% url 'Lposip' leagues.leagueid%}">守備位置別</a>
-                        </nav>
+                            <a class="nav-link" href="{% url 'tap22' teams.team_id%}">全球</a>
+                            <a class="nav-link" href="{% url 'tvsrightp22' teams.team_id%}">対右</a>
+                            <a class="nav-link" href="{% url 'tvsleftp22' teams.team_id%}">対左</a>
+                            <a class="nav-link" href="{% url 'tchancep22' teams.team_id%}">得点圏</a>
+                            <a class="nav-link" href="{% url 'tbasep22' teams.team_id%}">塁別</a>
+                            <a class="nav-link" href="{% url 'tinningp22' teams.team_id%}">イニング別</a>
+                            <a class="nav-link" href="{% url 'tcountp22' teams.team_id%}">カウント別</a>
+                            <a class="nav-link" href="{% url 'tcoursep22' teams.team_id%}">コース別</a>
+                            <a class="nav-link" href="{% url 'tpointp22' teams.team_id%}">点差別</a>
+                            <a class="nav-link" href="{% url 'tweekp22' teams.team_id%}">曜日別</a>
+                            <a class="nav-link" href="{% url 'tmonthp22' teams.team_id%}">月別</a>
+                            <a class="nav-link" href="{% url 'tbatnump22' teams.team_id%}">打順別</a>
+                            <a class="nav-link" href="{% url 'tstadiump22' teams.team_id%}">球場別</a>
+                            <a class="nav-link" href="{% url 'tvsteamp22' teams.team_id%}">対チーム別</a>
+                            <a class="nav-link" href="{% url 'tposip22' teams.team_id%}">守備位置別</a>
+                          </nav>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -102,8 +103,8 @@
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        
-                                    {% for stat in leagues.league.all %}
+
+                                    {% for stat in teams.teamstats.all %}
                                     {% if stat.sitnum == num %}
                                         <tr>
                                           <td>{{ stat.stype }}</td>
@@ -144,7 +145,7 @@
                             </div>
                         </div>
                         {% if num == 6 %}
-                        {% include 'league/league-courseP.html'%}
+                        {% include 'course/team-courseP.html'%}
                         {% endif %}
                     </div>
                 </main>

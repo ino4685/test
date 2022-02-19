@@ -3,11 +3,11 @@ from .models import Team, Teamstats2021, Player
 
 
 class Team2021View(ListView):
-    template_name = "team/team.html"
+    template_name = "2021/team/team.html"
     model = Team
 
 class TeamIntro2021View(DetailView):
-    template_name = "team/ti.html"
+    template_name = "2021/team/ti.html"
     model = Team
     context_object_name = 'teams'
 
@@ -19,7 +19,7 @@ class TeamIntro2021View(DetailView):
 
 
 class TeamPlayerBatt2021View(DetailView):
-    template_name = "team/teambp.html"
+    template_name = "2021/team/teambp.html"
     model = Team
     context_object_name = 'teams'
 
@@ -34,7 +34,7 @@ class TeamPlayerBatt2021View(DetailView):
         return context
 
 class TeamPlayerPit2021View(DetailView):
-    template_name = "team/teampp.html"
+    template_name = "2021/team/teampp.html"
     model = Team
     context_object_name = 'teams'
 

@@ -1,0 +1,151 @@
+{% extends 'base22.html' %}
+{% load static %}
+
+
+
+{% block content %}
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">{{players.name_main}}</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">打撃成績</li>
+                        </ol>
+                        <nav class="nav">
+                            <a class="nav-link" href="{% url 'ap22' players.playerid%}">全球</a>
+                            <a class="nav-link" href="{% url 'vsrightp22' players.playerid%}">対右</a>
+                            <a class="nav-link" href="{% url 'vsleftp22' players.playerid%}">対左</a>
+                            <a class="nav-link" href="{% url 'chancep22' players.playerid%}">得点圏</a>
+                            <a class="nav-link" href="{% url 'basep22' players.playerid%}">塁別</a>
+                            <a class="nav-link" href="{% url 'inningp22' players.playerid%}">イニング別</a>
+                            <a class="nav-link" href="{% url 'countp22' players.playerid%}">カウント別</a>
+                            <a class="nav-link" href="{% url 'coursep22' players.playerid%}">コース別</a>
+                            <a class="nav-link" href="{% url 'pointp22' players.playerid%}">点差別</a>
+                            <a class="nav-link" href="{% url 'weekp22' players.playerid%}">曜日別</a>
+                            <a class="nav-link" href="{% url 'monthp22' players.playerid%}">月別</a>
+                            <a class="nav-link" href="{% url 'batnump22' players.playerid%}">打順別</a>
+                            <a class="nav-link" href="{% url 'stadiump22' players.playerid%}">球場別</a>
+                            <a class="nav-link" href="{% url 'vsteamp22' players.playerid%}">対チーム別</a>
+                          </nav>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                {{ sit }}成績
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>SituationType</th>
+                                            <th>投球割合</th>
+                                            <th>打者数</th>
+                                            <th>奪アウト数</th>
+                                            <th>被安打数</th>
+                                            <th>被単打</th>
+                                            <th>被二塁打</th>
+                                            <th>被三塁打</th>
+                                            <th>被本塁打</th>
+                                            <th>被塁打数</th>
+                                            <th>失点</th>
+                                            <th>奪三振</th>
+                                            <th>与四球</th>
+                                            <th>与死球</th>
+                                            <th>奪併殺</th>
+                                            <th>被打率</th>
+                                            <th>WHIP</th>
+                                            <th>失点率</th>
+                                            <th>Sw%</th>
+                                            <th>Co%</th>
+                                            <th>SSw%</th>
+                                            <th>SCo%</th>
+                                            <th>BSw%</th>
+                                            <th>BCo%</th>
+                                            <th>GO</th>
+                                            <th>FO</th>
+                                            <th>RO</th>
+                                            <th>投球数</th>
+                                            <th>PperPA</th>
+                                            <th>SituationType</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                          <th>SituationType</th>
+                                          <th>投球割合</th>
+                                          <th>打者数</th>
+                                          <th>奪アウト数</th>
+                                          <th>被安打数</th>
+                                          <th>被単打</th>
+                                          <th>被二塁打</th>
+                                          <th>被三塁打</th>
+                                          <th>被本塁打</th>
+                                          <th>被塁打数</th>
+                                          <th>失点</th>
+                                          <th>奪三振</th>
+                                          <th>与四球</th>
+                                          <th>与死球</th>
+                                          <th>奪併殺</th>
+                                          <th>被打率</th>
+                                          <th>WHIP</th>
+                                          <th>失点率</th>
+                                          <th>Sw%</th>
+                                          <th>Co%</th>
+                                          <th>SSw%</th>
+                                          <th>SCo%</th>
+                                          <th>BSw%</th>
+                                          <th>BCo%</th>
+                                          <th>GO</th>
+                                          <th>FO</th>
+                                          <th>RO</th>
+                                          <th>投球数</th>
+                                          <th>PperPA</th>
+                                          <th>SituationType</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+                                    {% for stat in players.stats.all %}
+                                    {% if stat.sitnum == num %}
+                                        <tr>
+                                            <td>{{ stat.stype }}</td>
+                                            <td>{{ stat.per| default_if_none:"" }}</td>
+                                            <td>{{ stat.bc| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.o| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.hit }}</td>
+                                            <td>{{ stat.single }}</td>
+                                            <td>{{ stat.double }}</td>
+                                            <td>{{ stat.triple }}</td>
+                                            <td>{{ stat.homerun }}</td>
+                                            <td>{{ stat.tb }}</td>
+                                            <td>{{ stat.r| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.k| default_if_none:"" }}</td>
+                                            <td>{{ stat.bb| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.db| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.dp| default_if_none:""| floatformat:0 }}</td>
+                                            <td>{{ stat.oba| default_if_none:"0.0"| floatformat:3 }}</td>
+                                            <td>{{ stat.whip| default_if_none:""| floatformat:3 }}</td>
+                                            <td>{{ stat.era| default_if_none:""| floatformat:3 }}</td>
+                                            <td>{{ stat.sw| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.co| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.ssw| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.sco| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.bsw| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.bco| default_if_none:"0.0" }}%</td>
+                                            <td>{{ stat.go| default_if_none:"" }}</td>
+                                            <td>{{ stat.fo| default_if_none:"" }}</td>
+                                            <td>{{ stat.ro| default_if_none:"" }}</td>
+                                            <td>{{ stat.pitcount| default_if_none:"" }}</td>
+                                            <td>{{ stat.pperpa| default_if_none:"" }}</td>
+                                            <td>{{ stat.stype }}</td>
+                                        </tr>
+                                    {% endif %}
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% if num == 6 %}
+                        {% include 'course/player-courseP.html'%}
+                        {% endif %}
+                    </div>
+                </main>
+{% endblock content %}

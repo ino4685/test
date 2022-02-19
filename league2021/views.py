@@ -3,11 +3,11 @@ from .models import League, Leaguestats2021, Statsrank2021, Statsrank2021P
 
 
 class league2021View(ListView):
-    template_name = "league/league.html"
+    template_name = "2021/league/league.html"
     model = League
 
 class leagueIntro2021View(DetailView):
-    template_name = "league/li.html"
+    template_name = "2021/league/li.html"
     model = League
     context_object_name = 'leagues'
 
@@ -20,7 +20,7 @@ class leagueIntro2021View(DetailView):
 
 
 class leaguePlayerBatt2021View(ListView):
-    template_name = "league/leaguebp.html"
+    template_name = "2021/league/leaguebp.html"
     model = Statsrank2021
     context_object_name = 'leagues'
 
@@ -34,7 +34,7 @@ class leaguePlayerBatt2021View(ListView):
         return context
 
 class leaguePlayerPit2021View(ListView):
-    template_name = "league/leaguepp.html"
+    template_name = "2021/league/leaguepp.html"
     model = Statsrank2021P
     context_object_name = 'leagues'
 

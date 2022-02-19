@@ -1,0 +1,25 @@
+{% extends 'base22.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">{{ leagues.leaguename }}</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">リーグ紹介</li>
+        </ol>
+        <p>リーグ成績</p>
+        <nav class="nav">
+            <a class="nav-link" href="{% url 'La22' pri %}">打者成績</a>
+            <a class="nav-link" href="{% url 'Lp22' pri %}">投手成績</a>
+        </nav>
+        <p class="pt-5">{{ leagues.leaguename }}個人成績</p>
+        <nav class="nav">
+            <a class="nav-link" href="{% url 'Lpb22' pri %}">打者成績</a>
+            <a class="nav-link" href="{% url 'Lpp22' pri %}">投手成績</a>
+        </nav>
+    </div>
+</main>
+{% endblock content %}

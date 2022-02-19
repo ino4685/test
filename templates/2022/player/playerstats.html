@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base22.html' %}
 {% load static %}
 
 
@@ -11,20 +11,20 @@
                             <li class="breadcrumb-item active">打撃成績</li>
                         </ol>
                         <nav class="nav">
-                            <a class="nav-link" href="{% url 'ab' players.playerid%}">全球</a>
-                            <a class="nav-link" href="{% url 'vsright' players.playerid%}">対右</a>
-                            <a class="nav-link" href="{% url 'vsleft' players.playerid%}">対左</a>
-                            <a class="nav-link" href="{% url 'chance' players.playerid%}">得点圏</a>
-                            <a class="nav-link" href="{% url 'base' players.playerid%}">塁別</a>
-                            <a class="nav-link" href="{% url 'inning' players.playerid%}">イニング別</a>
-                            <a class="nav-link" href="{% url 'count' players.playerid%}">カウント別</a>
-                            <a class="nav-link" href="{% url 'course' players.playerid%}">コース別</a>
-                            <a class="nav-link" href="{% url 'point' players.playerid%}">点差別</a>
-                            <a class="nav-link" href="{% url 'week' players.playerid%}">曜日別</a>
-                            <a class="nav-link" href="{% url 'month' players.playerid%}">月別</a>
-                            <a class="nav-link" href="{% url 'batnum' players.playerid%}">打順別</a>
-                            <a class="nav-link" href="{% url 'stadium' players.playerid%}">球場別</a>
-                            <a class="nav-link" href="{% url 'vsteam' players.playerid%}">対チーム別</a>
+                            <a class="nav-link" href="{% url 'ab22' players.playerid%}">全球</a>
+                            <a class="nav-link" href="{% url 'vsright22' players.playerid%}">対右</a>
+                            <a class="nav-link" href="{% url 'vsleft22' players.playerid%}">対左</a>
+                            <a class="nav-link" href="{% url 'chance22' players.playerid%}">得点圏</a>
+                            <a class="nav-link" href="{% url 'base22' players.playerid%}">塁別</a>
+                            <a class="nav-link" href="{% url 'inning22' players.playerid%}">イニング別</a>
+                            <a class="nav-link" href="{% url 'count22' players.playerid%}">カウント別</a>
+                            <a class="nav-link" href="{% url 'course22' players.playerid%}">コース別</a>
+                            <a class="nav-link" href="{% url 'point22' players.playerid%}">点差別</a>
+                            <a class="nav-link" href="{% url 'week22' players.playerid%}">曜日別</a>
+                            <a class="nav-link" href="{% url 'month22' players.playerid%}">月別</a>
+                            <a class="nav-link" href="{% url 'batnum22' players.playerid%}">打順別</a>
+                            <a class="nav-link" href="{% url 'stadium22' players.playerid%}">球場別</a>
+                            <a class="nav-link" href="{% url 'vsteam22' players.playerid%}">対チーム別</a>
                           </nav>
                         <div class="card mb-4">
                             <div class="card-header">
@@ -153,7 +153,7 @@
                             </div>
                         </div>
                         {% if num == 6 %}
-                        {% include 'player/player-course.html'%}
+                        {% include 'course/player-course.html'%}
                         {% endif %}
                     </div>
                 </main>

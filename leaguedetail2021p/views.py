@@ -1,8 +1,10 @@
 from django.views.generic import DetailView
 from .models import League, Leaguestats2021P
 
+tempurl = "2021/league/leaguestatsP.html"
+
 class Lp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -19,7 +21,7 @@ class Lp2021View(DetailView):
 
 
 class Lavrp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -34,7 +36,7 @@ class Lavrp2021View(DetailView):
         return context
 
 class Lavlp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -50,7 +52,7 @@ class Lavlp2021View(DetailView):
         return context
 
 class Lacp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -66,7 +68,7 @@ class Lacp2021View(DetailView):
         return context
 
 class Lasp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -82,7 +84,7 @@ class Lasp2021View(DetailView):
         return context
 
 class Lavtp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -97,7 +99,7 @@ class Lavtp2021View(DetailView):
         return context
 
 class Laip2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -112,7 +114,7 @@ class Laip2021View(DetailView):
         return context
 
 class Lacountp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -127,7 +129,7 @@ class Lacountp2021View(DetailView):
         return context
 
 class Lacoursep2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -142,7 +144,7 @@ class Lacoursep2021View(DetailView):
         return context
 
 class Labnp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -157,7 +159,7 @@ class Labnp2021View(DetailView):
         return context
 
 class Lapp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -172,7 +174,7 @@ class Lapp2021View(DetailView):
         return context
 
 class Lawp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -187,7 +189,7 @@ class Lawp2021View(DetailView):
         return context
 
 class Labasep2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -202,7 +204,7 @@ class Labasep2021View(DetailView):
         return context
 
 class Lamp2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 
@@ -217,7 +219,7 @@ class Lamp2021View(DetailView):
         return context
 
 class Laposip2021View(DetailView):
-    template_name = "league/leaguestatsP.html"
+    template_name = tempurl
     model = League
     context_object_name = 'leagues'
 

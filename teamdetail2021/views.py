@@ -1,8 +1,10 @@
 from django.views.generic import ListView, DetailView
 from .models import Team, Teamstats2021
 
+tempurl = "2021/team/teamstats.html"
+
 class Tab2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -20,7 +22,7 @@ class Tab2021View(DetailView):
 
 
 class Tvr2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -35,7 +37,7 @@ class Tvr2021View(DetailView):
         return context
 
 class Tvl2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -51,7 +53,7 @@ class Tvl2021View(DetailView):
         return context
 
 class Tc2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -67,7 +69,7 @@ class Tc2021View(DetailView):
         return context
 
 class Ts2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -83,7 +85,7 @@ class Ts2021View(DetailView):
         return context
 
 class Tvt2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -98,7 +100,7 @@ class Tvt2021View(DetailView):
         return context
 
 class Ti2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -113,7 +115,7 @@ class Ti2021View(DetailView):
         return context
 
 class Tcount2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -128,7 +130,7 @@ class Tcount2021View(DetailView):
         return context
 
 class Tcourse2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -143,7 +145,7 @@ class Tcourse2021View(DetailView):
         return context
 
 class Tbn2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -158,7 +160,7 @@ class Tbn2021View(DetailView):
         return context
 
 class Tp2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -173,7 +175,7 @@ class Tp2021View(DetailView):
         return context
 
 class Tw2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -188,7 +190,7 @@ class Tw2021View(DetailView):
         return context
 
 class Tbase2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -203,7 +205,7 @@ class Tbase2021View(DetailView):
         return context
 
 class Tm2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 
@@ -219,7 +221,7 @@ class Tm2021View(DetailView):
 
 
 class Tposi2021View(DetailView):
-    template_name = "team/teamstats.html"
+    template_name = tempurl
     model = Team
     context_object_name = 'teams'
 

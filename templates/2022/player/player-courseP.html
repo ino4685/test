@@ -1,0 +1,109 @@
+<table border="0" class="course" cellspacing="1"> 
+  <tbody> 
+    <tr>
+      {% for stat in players.stats.all %}
+      {% if stat.sitnum == num %}
+      {% if stat.stype == '1' or stat.stype == '2' or stat.stype == '3' or stat.stype == '4' or stat.stype == '5' %}
+      <td class="course-t {% if stat.oba >= 0.3 %}bg-danger{% elif stat.oba < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+        {{ stat.bc| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+        <span class="avg">{{ stat.oba| default_if_none:"0.000"| floatformat:3 }}</span><br>
+        {{ stat.homerun }}被弾<br>
+        {{ stat.k| default_if_none:"0" }}奪三振<br>
+        Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+        Co% {{ stat.co| default_if_none:"0.0" }}%
+      </td>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr> 
+  
+    <tr> 
+      {% for stat in players.stats.all %}
+      {% if stat.sitnum == num %}
+      {% if stat.stype == '6' or stat.stype == '7' or stat.stype == '8' or stat.stype == '9' or stat.stype == '10' %}
+      <td class="course-t {% if stat.oba >= 0.3 %}bg-danger{% elif stat.oba < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+        {{ stat.bc| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+        <span class="avg">{{ stat.oba| default_if_none:"0.000"| floatformat:3 }}</span><br>
+        {{ stat.homerun }}被弾<br>
+        {{ stat.k| default_if_none:"0" }}奪三振<br>
+        Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+        Co% {{ stat.co| default_if_none:"0.0" }}%
+      </td>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr> 
+  
+    <tr> 
+      {% for stat in players.stats.all %}
+      {% if stat.sitnum == num %}
+      {% if stat.stype == '11' or stat.stype == '12' or stat.stype == '13' or stat.stype == '14' or stat.stype == '15' %}
+      <td class="course-t {% if stat.oba >= 0.3 %}bg-danger{% elif stat.oba < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+        {{ stat.bc| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+        <span class="avg">{{ stat.oba| default_if_none:"0.000"| floatformat:3 }}</span><br>
+        {{ stat.homerun }}被弾<br>
+        {{ stat.k| default_if_none:"0" }}奪三振<br>
+        Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+        Co% {{ stat.co| default_if_none:"0.0" }}%
+      </td>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr> 
+  
+    <tr> 
+      {% for stat in players.stats.all %}
+      {% if stat.sitnum == num %}
+      {% if stat.stype == '16' or stat.stype == '17' or stat.stype == '18' or stat.stype == '19' or stat.stype == '20' %}
+      <td class="course-t {% if stat.oba >= 0.3 %}bg-danger{% elif stat.oba < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+        {{ stat.bc| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+        <span class="avg">{{ stat.oba| default_if_none:"0.000"| floatformat:3 }}</span><br>
+        {{ stat.homerun }}被弾<br>
+        {{ stat.k| default_if_none:"0" }}奪三振<br>
+        Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+        Co% {{ stat.co| default_if_none:"0.0" }}%
+      </td>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr> 
+  
+    <tr> 
+      {% for stat in players.stats.all %}
+      {% if stat.sitnum == num %}
+      {% if stat.stype == '21' or stat.stype == '22' or stat.stype == '23' or stat.stype == '24' or stat.stype == '25' %}
+      <td class="course-t {% if stat.oba >= 0.3 %}bg-danger{% elif stat.oba < 0.15 %}bg-info{% endif %}">{{ stat.stype }}<br>
+        {{ stat.bc| default_if_none:""| floatformat:0 }}-{{ stat.hit }}<br>
+        <span class="avg">{{ stat.oba| default_if_none:"0.000"| floatformat:3 }}</span><br>
+        {{ stat.homerun }}被弾<br>
+        {{ stat.k| default_if_none:"0" }}奪三振<br>
+        Sw% {{ stat.sw| default_if_none:"0.0" }}%<br>
+        Co% {{ stat.co| default_if_none:"0.0" }}%
+      </td>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+    </tr> 
+  </tbody> 
+  </table> 
+  <table border="0" class="course-sample" cellspacing="1"> 
+    <br>
+    見本
+    <tbody> 
+      <tr>
+        <td class="course-t bg-info">被打率.150未満
+        </td>
+        <td class="course-t">コース番号<br>
+          打者数-被安打<br>
+          <span class="avg">被打率</span><br>
+          被本塁打数<br>
+          奪三振数<br>
+          Sw%<br>
+          Co%
+        </td>
+        <td class="course-t bg-danger">被打率.300以上
+        </td>
+      </tr> 
+    </tbody> 
+  </table> 
+  <p>※投手側視点(1が左打者側､5が右打者側)､中心9マス(7,8,9,12,13,14,17,18,19)がストライクゾーン</p>
