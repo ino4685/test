@@ -1,1 +1,1 @@
-# djangosite
+# Djangoサイト、パスなどのファイル除く
